@@ -17,17 +17,18 @@ from setuptools import setup, find_packages
 
 setup(
     name = "laikaboss",
-    version = "2.0",
+    version = "2.0.1",
     author = "Lockheed Martin",
     description = "laikaboss: file centric intrusion detection system",
     license = "Apache 2.0",
     keywords = "malware",
-    url = "https://github.com/lmco/laikaboss/",
+    url = "https://github.com/themrkeys/laikaboss/",
     packages = find_packages(),
     data_files = [ ('/etc/laikaboss', ['etc/dist/laikaboss.conf', 'etc/dist/laikad.conf', 
                                        'etc/framework/dispatch.yara', 'etc/framework/conditional-dispatch.yara',
                                        'etc/cloudscan/cloudscan.conf']),
                    ('/etc/laikaboss/modules/scan-yara', ['etc/modules/signatures.yara']),
-                   ('/etc/laikaboss/modules/dispositioner', ['etc/modules/disposition.yara'])],
-    scripts = [ "laika.py", "laikad.py", "cloudscan.py" ],
+                   ('/etc/laikaboss/modules/dispositioner', ['etc/modules/disposition.yara']),
+                   ('/etc/laikamilter', ['etc/laikamilter/laikamilter.conf','etc/laikamilter/accept_whitelist.json'])],
+    scripts = [ "laika.py", "laikad.py", "cloudscan.py", "laikamilter.py" ],
 )
